@@ -4,13 +4,18 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { AiOutlineSearch } from 'react-icons/ai'
 import Button from './Button'
+import { useRouter } from 'next/navigation'
 
 const SearchBox = () => {
+  const router = useRouter()
   const [search, setSearch] = useState('')
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    alert(search)
+    if(!search.trim()){
+      return
+    }
+    router.push(`/search/web?searchTerm=${search}`)
   }
   return (
     <form onSubmit={handleSubmit} action="" className="mt-6 text-center">
@@ -25,7 +30,7 @@ const SearchBox = () => {
         </div>
         {/* 2 buttons */}
       <div className="m-5">
-        <Button btnTitle={'Google Search'} />
+        <Button onClick={handleSubmit} btnTitle={'Google Search'} />
         <Button btnTitle={'Feeling Lucky'} />
       </div>
     </form>
