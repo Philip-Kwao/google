@@ -1,4 +1,5 @@
 import '@/app/globals.css'
+import Footer from '@/components/Footer'
 import SearchHeader from '@/components/SearchHeader'
 
 export const metadata = {
@@ -11,6 +12,7 @@ const searchLayout = ({children}) => {
     <div>
         <SearchHeader />
         {children}
+        <Footer />
     </div>
   )
 }
