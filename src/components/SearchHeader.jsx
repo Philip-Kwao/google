@@ -22,7 +22,6 @@ const SearchHeader = () => {
                 </div>
                 <WebSearchBox />
             </div>
-            {/* filters select */}
             {/* right items */}
             <RightItems />
             {/* safe search select */}
