@@ -1,3 +1,4 @@
+'use client'
 import Logo from '@/assets/images/logo.png'
 import Image from 'next/image'
 import SearchBox from './SearchBox'
@@ -10,8 +11,17 @@ import Filter from './Filter'
 import Tools from './Tools'
 import { RiArrowDownSFill } from 'react-icons/ri'
 import SearchSafe from './SearchSafe'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 
 const SearchHeader = () => {
+    const pathName = usePathname()
+    const searchParams = useSearchParams()
+    const searchTerm = searchParams.get("searchTerm")
+    const router = useRouter()
+    const selectTab = (tab) =>{
+        router.push(`/search/${tab==='Images'?'image':'web'}?searchTerm=${searchTerm}`)
+    }
+
   return (
     <header className='relative text-center'>
         <div className="flex items-center lg:justify-between justify-around lg:mx-16 my-6 mx-auto max-w-lg md:max-w-none text-center">
@@ -31,11 +41,13 @@ const SearchHeader = () => {
             <div className="">
                 <div className="w-full">
                     <div className="mt-4 flex items-center justify-between">
-                    <Tag title={'All'} />
-                    <Tag title={'Web'} />
-                    <Tag title={'Images'} />
-                    <Tag title={'Videos'} />
-                    <Tag title={'News'} />
+                        <div className={`mx-2 ${pathName === '/search/web' && 'bg-blue-500 rounded-full text-white hover:bg-blue-400'}`} onClick={()=>selectTab("All")}>
+                            <Tag title={'All'} />
+                        </div>
+                        <div onClick={()=>selectTab("Images")} className={`mx-2 ${pathName === '/search/image' && 'bg-blue-500 rounded-full text-white hover:!bg-blue-400'}`}>
+
+                            <Tag title={'Images'} />
+                        </div>
                     </div>
                 </div>
             </div>
