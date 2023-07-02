@@ -3,7 +3,7 @@ import Items from './Items'
 
 const SafeSearch = () => {
   return (
-    <div className='flex flex-col bg-white z-20 shadow-xl absolute h-full text-sm font-light py-2 w-52 right-10'>
+    <div className='flex flex-col bg-white z-20 shadow-xl absolute h-full text-sm font-light py-2 w-52 right-10 -bottom-44 rounded-lg'>
         <Items title={'Filter explicit results'} itemLink={''} />
         <Items title={'Blur explicit images'} itemLink={''} />
         <Items title={'Off'} itemLink={''} />
