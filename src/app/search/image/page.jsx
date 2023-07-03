@@ -11,7 +11,7 @@ const page = async ({searchParams}) => {
   const res = await fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${contextKey}&q=${searchParams.searchTerm}&searchType=image&start=${startIndex}`)
 
   const data = await res.json()
-  // console.log(data.image)
+  console.log(data.image)
   const results = data.items
   if(!results){
     return (
@@ -30,7 +30,7 @@ const page = async ({searchParams}) => {
       
       <div className='grid gap-2 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 grid-rows-5 mx-auto'>
         {results && results.map((result)=>(
-            <div className="w-full mx-auto">
+            <div key={result.link} className="w-full mx-auto">
               <Link target='_blank' href={result.image.contextLink} className='flex flex-col '>
                 <img src={result.link} alt={result.title} className='h-[250px] w-[400px] rounded-xl hover:shadow-lg transition-all duration-150' />
               </Link>
