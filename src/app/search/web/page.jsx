@@ -1,4 +1,3 @@
-import WebPage from '@/components/WebPage'
 import WebResults from '@/components/WebResults'
 import Link from 'next/link'
 import React from 'react'

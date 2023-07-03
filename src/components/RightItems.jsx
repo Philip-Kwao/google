@@ -5,7 +5,7 @@ import { TbGridDots } from 'react-icons/tb'
 
 const RightItems = () => {
   return (
-    <div className='items-center text-2xl text-slate-500 opacity-80 hidden md:flex'>
+    <div className='items-center text-2xl text-slate-500 opacity-80 hidden md:flex cursor-pointer'>
         <AiFillSetting className='mx-2' />
         <TbGridDots className='mx-2' />
         <FaRegUserCircle className='mx-2' />
