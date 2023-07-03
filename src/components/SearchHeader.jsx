@@ -28,7 +28,7 @@ const SearchHeader = () => {
         <div className="flex items-center lg:justify-between justify-around lg:mx-16 my-6 mx-auto max-w-lg md:max-w-none text-center">
             <div className="flex items-center justify-center 2xl:translate-x-[5rem] flex-col md:flex-row my-4">
                 {/* Logo */}
-                <div className="my-4 text-center">
+                <div className="my-4 text-center mr-4">
                     <Link href={'/'}>
                         <Image width={130} height={130} src={Logo} alt={Logo} />
                     </Link>

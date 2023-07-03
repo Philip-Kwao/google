@@ -35,7 +35,7 @@ const SearchBox = () => {
   return (
     <>
         <form onSubmit={handleSubmit} action="" className="mt-6 text-center">
-            <div className="border flex h-[3rem] w-[600px] items-center rounded-full border-slate-200">
+            <div className="border flex h-[3rem] lg:w-[600px]  items-center rounded-full border-slate-200">
                 <button type='submit' className="mx-4 text-xl opacity-50">
                     <AiOutlineSearch />
                 </button>
