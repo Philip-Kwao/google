@@ -35,7 +35,7 @@ const WebSearchBox = () => {
     <div>
         {/* searchbox */}
             {/* tags */}
-            <div className="flex items-center flex-col xl:min-w-[35rem] 2xl:min-w-[43rem] ml-10 ">
+            <div className="flex items-center flex-col xl:min-w-[35rem] 2xl:min-w-[43rem] lg:ml-10 ">
                 <form onSubmit={handleSubmit} className="flex items-center border rounded-full h-12 w-full group shadow">
                      <button type='submit' className="cursor-pointer text-xl text-blue-700 font-bold  mx-4">
                         <AiOutlineSearch />
@@ -44,8 +44,8 @@ const WebSearchBox = () => {
                     <div className="text-xl text-blue-800 font-black mx-4 cursor-pointer" onClick={removeSearch}>
                         <RxCross2 />
                     </div>
-                    <span className="h-8 w-[0.5px] z-10 bg-slate-300"></span>
-                    <Image src={Mic} width={30} height={30} alt={Mic} className='cursor-pointer ml-4' />
+                    <span className="h-8 w-[0.5px] z-10 bg-slate-300 "></span>
+                    <Image src={Mic} width={30} height={30} alt={Mic} className='cursor-pointer lg:ml-4' />
                     <Image src={Camera} width={30} height={30} alt={Camera} className='cursor-pointer mx-4' onClick={handleImageClick} />
                 </form>
                 
