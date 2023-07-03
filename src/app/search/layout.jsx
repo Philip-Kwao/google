@@ -12,7 +12,7 @@ const searchLayout = ({children}) => {
     <div>
         <SearchHeader />
         {children}
-        <Footer />
+        {/* <Footer /> */}
     </div>
   )
 }

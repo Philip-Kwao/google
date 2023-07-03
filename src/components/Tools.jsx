@@ -49,7 +49,6 @@ const Tools = () => {
                 </div>
             </div>
         </div> : ""}
-       { toolDrop === false ? (<div className="text-sm font-light absolute -bottom-9 md:-translate-x-[42rem] 2xl:-translate-x-[52rem]">About 15,490,000,000 results (0.35 seconds)</div>):""}
     </div>
   )
 }

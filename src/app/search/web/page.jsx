@@ -1,5 +1,8 @@
+import WebPage from '@/components/WebPage'
+import WebResults from '@/components/WebResults'
 import Link from 'next/link'
 import React from 'react'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 
 const page = async ({searchParams}) => {
   const apiKey = process.env.API_KEY
@@ -21,10 +24,25 @@ const page = async ({searchParams}) => {
   }
   
   return (
-    <div className='m-10'>
+    <div className='mx-80 mt-4 max-w-2xl'>
+      {results && <WebResults results={data} />}
+      
       {results && results.map((result)=>(
-        <div> {result.title} </div>
+        <div>
+          <div className="mb-6">
+            <Link href={result.link} className='flex flex-col '>
+              <h3 className='text-sm mb-1'>{result.title}</h3>
+              <div className="flex items-center font-light text-xs text-stone-500 mb-1">
+                <span>{result.formattedUrl}</span>
+                <span> <BsThreeDotsVertical /> </span>
+              </div>
+              <h1 dangerouslySetInnerHTML={{ __html: result.htmlTitle}} className='text-[#1A0DAB] text-xl mb-1 hover:underline'></h1>
+            </Link>
+            <p dangerouslySetInnerHTML={{ __html: result.htmlSnippet }}></p>
+          </div> 
+        </div>
       ))}
+
     </div>
   )
 }
