@@ -1,3 +1,4 @@
+import PaginationButtons from '@/components/PaginationButtons'
 import WebResults from '@/components/WebResults'
 import Link from 'next/link'
 import React from 'react'
@@ -6,7 +7,8 @@ import { BsThreeDotsVertical } from 'react-icons/bs'
 const page = async ({searchParams}) => {
   const apiKey = process.env.API_KEY
   const contextKey = process.env.CONTEXT_KEY
-  const res = await fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${contextKey}&q=${searchParams.searchTerm}`)
+  const startIndex = searchParams.start || '1'
+  const res = await fetch(`https://www.googleapis.com/customsearch/v1?key=${apiKey}&cx=${contextKey}&q=${searchParams.searchTerm}&start=${startIndex}`)
 
   const data = await res.json()
   // console.log(data)
@@ -41,7 +43,7 @@ const page = async ({searchParams}) => {
           </div>
         ))}
       </div> 
-
+      <PaginationButtons />
     </div>
   )
 }
