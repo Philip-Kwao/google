@@ -12,6 +12,7 @@ import Tools from './Tools'
 import { RiArrowDownSFill } from 'react-icons/ri'
 import SearchSafe from './SearchSafe'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import Link from 'next/link'
 
 const SearchHeader = () => {
     const pathName = usePathname()
@@ -28,7 +29,9 @@ const SearchHeader = () => {
             <div className="flex items-center justify-center 2xl:translate-x-[5rem] flex-col md:flex-row my-4">
                 {/* Logo */}
                 <div className="my-4 text-center">
-                    <Image width={130} height={130} src={Logo} alt={Logo} />
+                    <Link href={'/'}>
+                        <Image width={130} height={130} src={Logo} alt={Logo} />
+                    </Link>
                 </div>
                 <WebSearchBox />
             </div>
