@@ -30,7 +30,7 @@ const page = async ({searchParams}) => {
       
       <div className='flex flex-col '>
         {results && results.map((result)=>(
-            <div className="mb-10" key={result.cacheId}>
+            <div className="mb-10" key={result.link}>
               <Link href={result.link} className='flex flex-col '>
                 <h3 className='text-sm mb-1'>{result.title}</h3>
                 <div className="flex items-center font-light text-xs text-stone-500 mb-1">
